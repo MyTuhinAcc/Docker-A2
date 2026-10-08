@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Event Registration</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f2f5f9;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 700px;
+            margin: 40px auto;
+        }
+
+        .card {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-info {
+            margin-bottom: 30px;
+        }
+
+        .event-info h2 {
+            color: #1e3c72;
+            margin-bottom: 12px;
+        }
+
+        .event-info p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .event-date {
+            margin-top: 12px;
+            font-weight: bold;
+            color: #2a5298;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #2a5298;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #1e3c72;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2a5298;
+        }
+
+        #message {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f5e9;
+            color: #2e7d32;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Student Event Registration</h1>
+        <p>Register now and participate in our upcoming event</p>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+
+            <div class="event-info">
+
+                <h2>Tech Innovation Summit 2026</h2>
+
+                <p>
+                    Join us for an exciting student technology event featuring
+                    discussions on software engineering, cloud computing,
+                    DevOps, artificial intelligence, and emerging technologies.
+                </p>
+
+                <p class="event-date">
+                    Event Date: 25 October 2026
+                </p>
+
+            </div>
+
+            <form id="registrationForm">
+
+                <div class="form-group">
+                    <label for="studentName">Student Name</label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        name="studentName"
+                        placeholder="Enter your full name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="registerNumber">Register Number</label>
+
+                    <input
+                        type="text"
+                        id="registerNumber"
+                        name="registerNumber"
+                        placeholder="Enter your register number"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Department</label>
+
+                    <select id="department" name="department" required>
+
+                        <option value="">
+                            Select Department
+                        </option>
+
+                        <option value="Computer Science">
+                            Computer Science
+                        </option>
+
+                        <option value="Computer Science Software Engineering">
+                            Computer Science (Software Engineering)
+                        </option>
+
+                        <option value="Information Technology">
+                            Information Technology
+                        </option>
+
+                        <option value="Electronics">
+                            Electronics and Communication
+                        </option>
+
+                        <option value="Mechanical">
+                            Mechanical Engineering
+                        </option>
+
+                        <option value="Electrical">
+                            Electrical Engineering
+                        </option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email address"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="eventDate">Event Date</label>
+
+                    <input
+                        type="date"
+                        id="eventDate"
+                        name="eventDate"
+                        value="2026-10-25"
+                        required
+                    >
+                </div>
+
+                <button type="submit">
+                    Register for Event
+                </button>
+
+            </form>
+
+            <div id="message">
+                Registration submitted successfully!
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>
+            Student Event Registration System © 2026
+        </p>
+    </footer>
+
+    <script>
+        document
+            .getElementById("registrationForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                document.getElementById("message").style.display = "block";
+
+                this.reset();
+            });
+    </script>
+
+</body>
+
+</html>
